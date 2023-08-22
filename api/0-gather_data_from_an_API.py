@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""  using a REST API, for a given employee ID, returns information
-about his/her TODO list progress """
-
-
+"""  using a REST API, for a given employee ID, returns information """
 import requests
 import sys
+
+
 user_id = sys.argv[1]
 res = f"todos?userId={user_id}&completed=true"
 user_info = requests.get(
