@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """  using a REST API, for a given employee ID, returns information """
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     user_id = sys.argv[1]
