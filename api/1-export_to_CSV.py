@@ -13,6 +13,7 @@ if __name__ == "__main__":
         f"https://jsonplaceholder.typicode.com/todos?userId={user_id}")
     completed_res = requests.get(f"https://jsonplaceholder.typicode.com/{res}")
     user_name = user_info.json()["name"]
+    user_username = user_info.json()["username"]
     completed = len(completed_res.json())
     total = len(total_response.json())
     print(f"Employee {user_name} is done with tasks({completed}/{total}):")
@@ -24,5 +25,5 @@ if __name__ == "__main__":
         write = csv.writer(f)
         for elem in total_response.json():
             f.write('"{}","{}","{}","{}"\n'.format(
-                user_id, user_name, elem["completed"], elem["title"]
+                user_id, user_username, elem["completed"], elem["title"]
             ))
